@@ -1,9 +1,10 @@
-package com.dakalv.usertask.domain;
+package com.dakalv.usertask.domain.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,6 +18,6 @@ public class User {
     private String name;
     private String email;
 
-    @OneToMany(mappedBy="user", cascade=CascadeType.ALL)
-    private List<Task> tasks;
+    @OneToMany(mappedBy="user", cascade=CascadeType.ALL, orphanRemoval = true)
+    private List<Task> tasks = new ArrayList<>();
 }

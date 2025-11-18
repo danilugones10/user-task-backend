@@ -1,4 +1,4 @@
-package com.dakalv.usertask.domain;
+package com.dakalv.usertask.domain.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,12 +18,7 @@ public class Task {
     private String description;
     private LocalDate dueDate;
 
-    @Enumerated(EnumType.STRING)
-    private TaskStatus status;
-
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
-
-    // getters y setters
 }
