@@ -23,7 +23,8 @@ public class UserControllerTest {
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15")
             .withDatabaseName("testdb")
             .withUsername("postgres")
-            .withPassword("postgres");
+            .withPassword("postgres")
+            .withReuse(false);
 
     // Configurar datasource de Spring Boot con Testcontainers
     @DynamicPropertySource

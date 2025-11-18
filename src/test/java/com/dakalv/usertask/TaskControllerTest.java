@@ -25,7 +25,8 @@ public class TaskControllerTest {
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15")
             .withDatabaseName("testdb")
             .withUsername("postgres")
-            .withPassword("postgres");
+            .withPassword("postgres")
+            .withReuse(false);
 
     @DynamicPropertySource
     static void registerProperties(DynamicPropertyRegistry registry) {

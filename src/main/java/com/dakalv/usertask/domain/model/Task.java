@@ -1,5 +1,6 @@
 package com.dakalv.usertask.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,5 +21,6 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name="user_id")
+    @JsonIgnore // evita serializar el user dentro de la task
     private User user;
 }
